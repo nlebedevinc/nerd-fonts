@@ -21,18 +21,16 @@ jobs:
         shellcheck $(git ls-files '*.sh')
 
     - name: Check Bash Script Formatting
-      uses: actions/setup-python@v2
+      uses: actions/setup-node@v2
       with:
-        python-version: '3.x'
+        node-version: '16'
 
-    - name: Install shfmt
+    - name: Install Prettier
       run: |
-        pip install shfmt
-        shfmt --version
+        npm install -g prettier
 
     - name: Lint Bash Scripts
       run: |
-        for script in $(git ls-files '*.sh'); do
-          shfmt -d "$script"
-        done
+        prettier --check **/*.sh
+
 
