@@ -21,10 +21,15 @@ jobs:
         shellcheck **/*.sh
 
     - name: Check Bash Script Formatting
-      uses: google/actionlint@v1.6.1
+      uses: actions/setup-python@v2
       with:
-        config: |
-          {
-            "indent": 2,
-            "max-line-length": 100
-          }
+        python-version: '3.x'
+
+    - name: Install shfmt
+      run: |
+        pip install shfmt
+        shfmt --version
+
+    - name: Lint Bash Scripts
+      run: |
+        shfmt -d **/*.sh
