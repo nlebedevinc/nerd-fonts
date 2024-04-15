@@ -17,11 +17,13 @@ echo "Homebrew cask-fonts repository tapped successfully."
 # Install Nerd Font packages
 echo "Installing Nerd Font packages..."
 font_packages=$(brew search '/font-.*-nerd-font/' | awk '{ print $1 }')
+successful_installations=0
 for package in $font_packages; do
   if ! brew install --cask "$package"; then
     echo "Warning: Failed to install $package. Continuing with the next package."
   else
     echo "Installed $package successfully."
+    ((successful_installations++))
   fi
 done
-echo "Nerd Font packages installed."
+echo "Nerd Font packages installed. $successful_installations packages installed successfully."
