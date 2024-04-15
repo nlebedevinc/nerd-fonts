@@ -1,21 +1,24 @@
+# EditorConfig
+# http://EditorConfig.org
+
+# Don't search any further up the directory tree
 root = true
 
+# Baseline
 [*]
+charset = utf-8
 indent_style = space
 indent_size = 2
-end_of_line = lf
-charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.sh]
-indent_size = 2
-
+# Markdown
 [*.md]
 trim_trailing_whitespace = false
 
-[*.yml]
-indent_size = 2
-
-[Makefile]
-indent_style = tab
+# Shell scripts
+[*.sh]
+max_line_length = 79
+keep_padding = true             # shfmt: -kp
+space_redirects = true          # shfmt: -sr
+switch_case_indent = true       # shfmt: -ci

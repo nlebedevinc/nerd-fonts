@@ -1,6 +1,6 @@
 # Nerd Fonts
 
-This is a set script to simplify the installation of Nerd Fonts for your systems and IDEs.
+This is a set script to simplify the installation of [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) for your systems and IDEs.
 
 ## Prerequisites
 Before running the script, ensure that you have the following installed:
@@ -9,13 +9,13 @@ Before running the script, ensure that you have the following installed:
 2. Git (for local installation)
 
 ## Usage
-- change: You can install the Nerd Font script in two ways: locally via Git clone or remotely via cURL.
+You can install the Nerd Font script in two ways: locally via Git clone or remotely via cURL.
 
 ```bash
 curl -sS https://raw.githubusercontent.com/nlebedevinc/nerd-fonts/main/brew-all.sh | sh
 ```
 
-To install a specific Nerd Font, pass the font name as an argument. The following will install `font-fira-code-nerd-font` as an example. The full list of currently supported Nerd Fonts is availabe here.
+To install a specific Nerd Font, pass the font name as an argument. The following will install `font-fira-code-nerd-font` as an example. The full list of currently supported Nerd Fonts is availabe [here](https://github.com/ryanoasis/nerd-fonts#patched-fonts).
 
 ```bash
 curl -sS https://raw.githubusercontent.com/nlebedevinc/nerd-fonts/main/brew.sh font-fira-code-nerd-font | sh
