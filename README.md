@@ -5,7 +5,7 @@ This is a set of scripts to simplify the installation of [Nerd Fonts](https://gi
 ## Prerequisites
 Before running the script, ensure that you have the following installed:
 
-1. Homebrew
+1. [Homebrew](https://brew.sh)
 2. Git (for local installation)
 
 ## Usage
