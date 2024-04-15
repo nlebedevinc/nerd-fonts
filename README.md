@@ -1,6 +1,6 @@
 # Nerd Fonts
 
-This is a set script to simplify the installation of [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) for your systems and IDEs.
+This is a set of scripts to simplify the installation of [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) for your systems and IDEs.
 
 ## Prerequisites
 Before running the script, ensure that you have the following installed:
