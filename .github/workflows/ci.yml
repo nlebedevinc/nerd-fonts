@@ -1,4 +1,4 @@
-name: Validate Scripts
+name: CI
 
 on: [push, pull_request]
 
