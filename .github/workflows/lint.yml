@@ -1,0 +1,30 @@
+name: Validate Scripts
+
+on: [push, pull_request]
+
+jobs:
+  validate-scripts:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Validate Bash Scripts
+      run: |
+        # Check for syntax errors
+        for script in $(find . -type f -name "*.sh"); do
+          bash -n "$script"
+        done
+
+        # Use shellcheck to lint the scripts
+        sudo apt-get install -y shellcheck
+        shellcheck **/*.sh
+
+    - name: Check Bash Script Formatting
+      uses: google/actionlint@v1.6.1
+      with:
+        config: |
+          {
+            "indent": 2,
+            "max-line-length": 100
+          }
