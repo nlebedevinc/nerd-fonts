@@ -18,7 +18,7 @@ jobs:
 
         # Use shellcheck to lint the scripts
         sudo apt-get install -y shellcheck
-        shellcheck **/*.sh
+        shellcheck $(git ls-files '*.sh')
 
     - name: Check Bash Script Formatting
       uses: actions/setup-python@v2
@@ -32,4 +32,7 @@ jobs:
 
     - name: Lint Bash Scripts
       run: |
-        shfmt -d **/*.sh
+        for script in $(git ls-files '*.sh'); do
+          shfmt -d "$script"
+        done
+
